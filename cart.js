@@ -52,6 +52,8 @@ function loadCart() {
   });
 }
 
+
+// Updates the cart counter whenever an item is added
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const count = cart.length;
@@ -69,7 +71,7 @@ function updateCartCount() {
 
  
 
-
+// Updates the cart and reloads it anytime an item is added
 window.addEventListener("DOMContentLoaded", () => {
     loadCart();
     updateCartCount();
