@@ -37,12 +37,28 @@ function loadCart() {
   // Clear cart button functionality
   const clearBtn = document.getElementById("clearCartBtn");
   clearBtn.addEventListener("click", () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+        alert("Cart is already empty!");
+        return;
+    }
+
+
     if (confirm("Are you sure you want to clear your cart?")) {
         localStorage.removeItem("cart");
         location.reload();
     
     }
   });
+}
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = cart.length;
+    const countSpan = document.getElementById("cartCount");
+    if (countSpan) {
+        countSpan.textContent = count;
+    }
 }
 
   
@@ -54,4 +70,7 @@ function loadCart() {
  
 
 
-window.addEventListener("DOMContentLoaded", loadCart);
+window.addEventListener("DOMContentLoaded", () => {
+    loadCart();
+    updateCartCount();
+});
