@@ -56,8 +56,18 @@ const products = [
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${product.title} added to cart!`);
+    updateCartCount();
  }
 
+
+ function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const count = cart.length;
+    const countSpan = document.getElementById("cartCount");
+    if (countSpan) {
+        countSpan.textContent = count;
+    }
+}
 
 
 
