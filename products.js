@@ -33,7 +33,7 @@ const products = [
             <h5 class="card-title">${product.title.toUpperCase()}</h5>
             <p class="card-text">$${product.price.toFixed(2)}</p>
             <p class="card-text">In stock</p>
-            <button class="btn btn-primary">Buy now</button>
+            <button class="btn btn-primary buy-btn" data-id="${product.id}">Buy now</button>
           </div>
         </div>
       `;
@@ -42,4 +42,20 @@ const products = [
   }
   
   renderProducts();
+    document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("buy-btn")) {
+            const productId = Number(e.target.dataset.id);
+            const selectedProduct = products.find(p => p.id === productId);
+            addToCart(selectedProduct);
+         }
+       });
+
+
+   function addToCart(product) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${product.title} added to cart!`);
+   }
+    }
   
