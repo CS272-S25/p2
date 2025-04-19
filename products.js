@@ -57,5 +57,8 @@ const products = [
     localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${product.title} added to cart!`);
    }
-    }
+
+
+
+}
   
