@@ -32,10 +32,23 @@ function loadCart() {
   // calculates total
   let total = cart.reduce((sum, item) => sum + item.price, 0);
   document.getElementById("totalPrice").textContent = `Total: $${total.toFixed(2)}`;
+
+
+  // Clear cart button functionality
+  const clearBtn = document.getElementById("clearCartBtn");
+  clearBtn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to clear your cart?")) {
+        localStorage.removeItem("cart");
+        location.reload();
+    
+    }
+  });
+}
+
   
 
 
-}
+  
 
 
  
