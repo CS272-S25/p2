@@ -1,0 +1,43 @@
+.navbar, footer {
+    background-color: #cceeff;
+    padding: 1rem 0;
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  p.lead {
+    font-size: 1.25rem;
+    color: #666;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  footer p {
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+  }
+  
