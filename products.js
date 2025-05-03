@@ -4,56 +4,64 @@ const products = [
     title: "Blue Hoodie",
     price: 29.99,
     image: "https://via.placeholder.com/300x200",
-    icon: "bluehoodie.jpg"
+    icon: "bluehoodie.jpg",
+    altText: "Blue Hoodie"
   },
   {
     id: 2,
     title: "Red T-Shirt",
     price: 14.99,
     image: "https://via.placeholder.com/300x200",
-    icon: "bluehoodie.jpg"
+    icon: "redshirt.jpg",
+    altText: "Red T-Shirt"
   },
   {
     id: 3,
     title: "Green Hat",
     price: 19.99,
     image: "https://via.placeholder.com/300x200",
-    icon: "bluehoodie.jpg"
+    icon: "greenhat.jpg",
+    altText: "Green Hat"
   },
   {
     id: 4,
-    title: "Black Shirt",
-    price: 24.99,
+    title: "Red Jacket",
+    price: 44.99,
     image: "https://via.placeholder.com/300x200",
-    icon: "bluehoodie.jpg"
+    icon: "redjacket.webp",
+    altText: "Red Jacket"
   },
   {
     id: 5,
     title: "Black Shirt",
-    price: 24.99,
+    price: 14.99,
     image: "https://via.placeholder.com/300x200",
-    icon: "bluehoodie.jpg"
+    icon: "blackshirt.webp",
+    altText: "Black Shirt"
   },
   {
     id: 6,
-    title: "Black Shirt",
-    price: 24.99,
+    title: "Black Shoes",
+    price: 34.99,
     image: "https://via.placeholder.com/300x200",
-    icon: "bluehoodie.jpg"
+    icon: "blackshoe.jpg",
+    altText: "Black Shoe"
   },
   {
     id: 7,
-    title: "Black Shirt",
+    title: "Black Pants",
     price: 24.99,
     image: "https://via.placeholder.com/300x200",
-    icon: "bluehoodie.jpg"
+    icon: "blackpants.webp",
+    altText: "Black Pants"
   },
   {
     id: 8,
-    title: "Black Shirt",
-    price: 24.99,
+    title: "Phalanx 20mm CIWS",
+    price: 24500999.99,
     image: "https://via.placeholder.com/300x200",
-    icon: "bluehoodie.jpg"
+    icon: "CIWS3.jpg",
+    altText: "Phalanx 20mm CIWS"
   }
 ];
 
@@ -73,7 +81,7 @@ function renderProducts() {
 
     const iconImg = document.createElement("img");
     iconImg.src = product.icon;
-    iconImg.alt = "Blue Jacket";
+    iconImg.alt = product.altText;
     iconImg.classList.add("card-img-top");
     iconImg.style.width = "50px";
     iconImg.style.margin = "0 auto";
@@ -134,8 +142,14 @@ document.addEventListener("click", (e) => {
 });
 
 function addToCart(product) {
+  // Only store the essential details in localStorage
+  const productForCart = {
+    title: product.title,
+    price: product.price
+  };
+
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push(product);
+  cart.push(productForCart);
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(`${product.title} added to cart!`);
   updateCartCount();
