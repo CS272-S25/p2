@@ -14,10 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
   
-      // Simulate sending the message by saving it to sessionStorage
       sessionStorage.setItem("lastContactMessage", JSON.stringify({ name, email, message }));
   
-      // Clear form + show confirmation
       form.reset();
       confirmation.style.display = "block";
     });

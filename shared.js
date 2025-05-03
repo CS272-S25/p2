@@ -1,4 +1,3 @@
-// shared.js
 
 document.addEventListener("DOMContentLoaded", () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
