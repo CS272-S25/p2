@@ -24,4 +24,7 @@ Handled: Orion handled project coordination, cart functionality, and UI structur
 Preben
 Preben contributed to product rendering, finalizing the products page, adding detail pages, and adding review pages. He also helped with localStorage setup and troubleshooting styling issues, also  improving the overall UX.
 
+This website is an e-commerce site that is targeted towards the general public with clothing products. It is meant to appeal to the experience of websites with similar goals, focusing on ease of use and convenience. It communicates products available and their prices, including any reviews about a product in addition to other background information about the product or the website. 
+
+
 
