@@ -1,0 +1,19 @@
+/* Navbar and footer styles */
+.navbar, footer {
+    background-color: #99ddff; /* Darker sky blue */
+    padding: 1rem 0;
+  }
+  
+  /* Title font styling */
+  .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+  
+  /* Footer text styling */
+  footer p {
+    margin: 0;
+    font-weight: 500;
+  }
+  

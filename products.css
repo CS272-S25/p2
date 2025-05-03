@@ -1,0 +1,16 @@
+.navbar,
+footer {
+  background-color: #99ddff;
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+footer p {
+  margin: 0;
+  font-weight: 500;
+}
