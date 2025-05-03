@@ -50,7 +50,28 @@ function loadCart() {
     
     }
   });
+
+  
 }
+
+// ✅ Buy Now button functionality
+const buyBtn = document.getElementById("buyBtn");
+buyBtn.addEventListener("click", () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  if (confirm("Are you sure you want to complete your purchase?")) {
+    localStorage.removeItem("cart");
+    document.getElementById("cartCount").textContent = "0";
+    document.getElementById("totalPrice").textContent = "Total: $0.00";
+    document.querySelector("#cartTable tbody").innerHTML = "";
+    document.getElementById("purchaseMsg").style.display = "block";
+  }
+});
+
 
 
 // Updates the cart counter whenever an item is added

@@ -43,9 +43,12 @@
           <a class="nav-link" href="products.html">E‑Shop</a>
           <a class="navbar-brand mx-auto" href="index.html">Constellation Shopping</a>
           <div>
-            <a class="nav-link d-inline" href="about.html">About</a>
-            <a class="nav-link d-inline" href="contact.html">Contact</a>
-            <a class="nav-link d-inline" href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+            <div class="d-flex gap-3">
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+              </div>
+              
           </div>
         </div>
       </nav>
@@ -67,6 +70,8 @@
 
       <!-- ❌ Clear cart button -->
       <button id="clearCartBtn" class="btn btn-warning mt-3">Clear Cart</button>
+      <button id="buyBtn" class="btn btn-success mt-3 ms-2">Buy Now</button>
+<p id="purchaseMsg" class="text-success mt-3" style="display: none;">Thank you for your purchase!</p>
     </div>
 
     <!-- 🌠 Footer (same as home page) -->

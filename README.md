@@ -2,55 +2,26 @@
 
 Hello, CS472! This is where you can document your group project.
 
-This project is a basic front-end e-commerce website built with HTML, CSS (Bootstrap), and JavaScript. It allows users to browse products, add items to a cart, view the cart, and clear it — all using DOM manipulation and localStorage (no backend required).
+Constellation Shopping is a responsive, front-end e-commerce site built with HTML, CSS (Bootstrap), and JavaScript. Users can browse a catalog of products, view their cart, send contact messages, and learn about the creators of the project.
 
+ Features
+ Add to Cart: Users can add items to their cart. Cart data is stored using localStorage and displayed in a dynamic table.
 
- Features:
- 
-- Product cards rendered dynamically with JavaScript
+ Cart Management: Remove individual items or clear the entire cart. Totals are calculated in real time.
 
-- Add to Cart functionality with localStorage
+ Contact Form: A form that simulates message submission and displays a confirmation message using sessionStorage.
 
-- Cart page displays all added items in a table
+ About Page: Learn about the creators, including images and descriptions.
 
-- Remove individual items or clear the entire cart
+ Navigation Bar: Present across all pages with dynamically updating cart count.
 
-- Automatically calculates total price
+ Dynamic Data Loading: Products are loaded from an external products.json file using fetch().
 
-- Live cart item count displayed in the navbar
+🧑‍🤝‍🧑 Team Members
+Orion King
+Handled: Orion handled project coordination, cart functionality, and UI structure. Also handled the majority of the Javascript work. Additonally, also managed GitHub version control and page layout. He worked on the contact page and created form logic.
 
-- Alerts and confirmations for better UX
-
-- Organized, well-commented code for team collaboration
-
-
-📂 File Structure
-
-index.html         → Home page (product display)
-cart.html          → Cart page (items & total)
-products.js        → Renders products + handles add to cart
-
-cart.js            → Displays cart + handles remove/clear
-css/styles.css     → Custom styles
-
-
-🗂️ Future Improvements
-
-- Add quantity and update logic
-
-- Build search or filter functionality
-
-- Style enhancements with custom CSS
-
-
-- Product categories or descriptions
-
-
-
-
-
-
-
-
+Preben
+Preben contributed to product rendering, finalizing the products page, adding detail pages, and adding review pages. He also helped with localStorage setup and troubleshooting styling issues, also  improving the overall UX.
 
 

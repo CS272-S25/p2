@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "title": "Blue Hoodie",
+      "price": 29.99,
+      "icon": "bluehoodie.jpg",
+      "altText": "Blue Hoodie"
+    },
+    {
+      "id": 2,
+      "title": "Red T-Shirt",
+      "price": 14.99,
+      "icon": "redshirt.jpg",
+      "altText": "Red T-Shirt"
+    },
+    {
+      "id": 3,
+      "title": "Green Hat",
+      "price": 19.99,
+      "icon": "greenhat.jpg",
+      "altText": "Green Hat"
+    },
+    {
+      "id": 4,
+      "title": "Red Jacket",
+      "price": 44.99,
+      "icon": "redjacket.webp",
+      "altText": "Red Jacket"
+    },
+    {
+      "id": 5,
+      "title": "Black Shirt",
+      "price": 14.99,
+      "icon": "blackshirt.webp",
+      "altText": "Black Shirt"
+    },
+    {
+      "id": 6,
+      "title": "Black Shoes",
+      "price": 34.99,
+      "icon": "blackshoe.jpg",
+      "altText": "Black Shoe"
+    },
+    {
+      "id": 7,
+      "title": "Black Pants",
+      "price": 24.99,
+      "icon": "blackpants.webp",
+      "altText": "Black Pants"
+    },
+    {
+      "id": 8,
+      "title": "Phalanx 20mm CIWS",
+      "price": 24500999.99,
+      "icon": "CIWS3.jpg",
+      "altText": "Phalanx 20mm CIWS"
+    }
+  ]
+  
