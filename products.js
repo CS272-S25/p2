@@ -1,80 +1,151 @@
-//  Array of product objects
-// Each product has an id, title, price, and image URL
-
-
 const products = [
-    {
-      id: 1,
-      title: "Blue Hoodie",
-      price: 29.99,
-      image: "https://via.placeholder.com/300x200"
-    },
-    {
-      id: 2,
-      title: "Red T-Shirt",
-      price: 14.99,
-      image: "https://via.placeholder.com/300x200"
-    },
-    {
-      id: 3,
-      title: "Green Hat",
-      price: 19.99,
-      image: "https://via.placeholder.com/300x200"
-
-
-    }
-  ];
-  
-  // Renders all products into the product grid on the homepage
-  function renderProducts() {
-    const grid = document.getElementById("productGrid"); // Selects the container where cards will go
-    products.forEach(product => {
-      const col = document.createElement("div");
-      col.classList.add("col");
-      // Set up the HTML structure for each product card
-      col.innerHTML = `
-        <div class="card h-100">
-          <img src="${product.image}" class="card-img-top" alt="${product.title}">
-          <div class="card-body">
-            <h5 class="card-title">${product.title.toUpperCase()}</h5>
-            <p class="card-text">$${product.price.toFixed(2)}</p>
-            <p class="card-text">In stock</p>
-            <button class="btn btn-primary buy-btn" data-id="${product.id}">Buy now</button>
-          </div>
-        </div>
-      `;
-      // Add the product card to the grid
-      grid.appendChild(col);
-    });
+  {
+    id: 1,
+    title: "Blue Hoodie",
+    price: 29.99,
+    image: "https://via.placeholder.com/300x200",
+    icon: "bluehoodie.jpg"
+  },
+  {
+    id: 2,
+    title: "Red T-Shirt",
+    price: 14.99,
+    image: "https://via.placeholder.com/300x200",
+    icon: "bluehoodie.jpg"
+  },
+  {
+    id: 3,
+    title: "Green Hat",
+    price: 19.99,
+    image: "https://via.placeholder.com/300x200",
+    icon: "bluehoodie.jpg"
+  },
+  {
+    id: 4,
+    title: "Black Shirt",
+    price: 24.99,
+    image: "https://via.placeholder.com/300x200",
+    icon: "bluehoodie.jpg"
+  },
+  {
+    id: 5,
+    title: "Black Shirt",
+    price: 24.99,
+    image: "https://via.placeholder.com/300x200",
+    icon: "bluehoodie.jpg"
+  },
+  {
+    id: 6,
+    title: "Black Shirt",
+    price: 24.99,
+    image: "https://via.placeholder.com/300x200",
+    icon: "bluehoodie.jpg"
+  },
+  {
+    id: 7,
+    title: "Black Shirt",
+    price: 24.99,
+    image: "https://via.placeholder.com/300x200",
+    icon: "bluehoodie.jpg"
+  },
+  {
+    id: 8,
+    title: "Black Shirt",
+    price: 24.99,
+    image: "https://via.placeholder.com/300x200",
+    icon: "bluehoodie.jpg"
   }
-  // Calls the function as soon as the script runs
-  renderProducts();
-  // Event listener to handle Buy Now button clicks anywhere on the page
-    document.addEventListener("click", (e) => {
-        // If the clicked element is a Buy Now button...
-        if (e.target.classList.contains("buy-btn")) {
-            const productId = Number(e.target.dataset.id);
-            const selectedProduct = products.find(p => p.id === productId);
-            addToCart(selectedProduct); // Adds the products to the cart
-         }
-       });
+];
 
+function renderProducts() {
+  const grid = document.getElementById("productGrid");
 
-   //  Adds a selected product to the cart (localStorage)
+  products.forEach(product => {
+    const col = document.createElement("div");
+    col.classList.add("col");
+
+    const card = document.createElement("div");
+    card.classList.add("card", "h-100");
+
+    // Small icon image for each product
+    const iconWrapper = document.createElement("div");
+    iconWrapper.classList.add("text-center", "pt-2");
+
+    const iconImg = document.createElement("img");
+    iconImg.src = product.icon;
+    iconImg.alt = "Blue Jacket";
+    iconImg.classList.add("card-img-top");
+    iconImg.style.width = "50px";
+    iconImg.style.margin = "0 auto";
+
+    iconWrapper.appendChild(iconImg);
+    card.appendChild(iconWrapper);
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const title = document.createElement("h5");
+    title.classList.add("card-title");
+    title.textContent = product.title.toUpperCase();
+
+    const price = document.createElement("p");
+    price.classList.add("card-text");
+    price.textContent = `$${product.price.toFixed(2)}`;
+
+    const stock = document.createElement("p");
+    stock.classList.add("card-text");
+    stock.textContent = "In stock";
+
+    const buttonGroup = document.createElement("div");
+    buttonGroup.classList.add("d-flex", "gap-2");
+
+    const buyBtn = document.createElement("button");
+    buyBtn.classList.add("btn", "btn-primary", "buy-btn", "flex-fill");
+    buyBtn.dataset.id = product.id;
+    buyBtn.textContent = "Add to Cart";
+
+    const viewBtn = document.createElement("a");
+    viewBtn.classList.add("btn", "btn-secondary", "flex-fill");
+    viewBtn.href = `product${product.id}.html`;
+    viewBtn.textContent = "View Details";
+
+    buttonGroup.appendChild(buyBtn);
+    buttonGroup.appendChild(viewBtn);
+
+    cardBody.appendChild(title);
+    cardBody.appendChild(price);
+    cardBody.appendChild(stock);
+    cardBody.appendChild(buttonGroup);
+
+    card.appendChild(cardBody);
+    col.appendChild(card);
+    grid.appendChild(col);
+  });
+}
+
+renderProducts();
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("buy-btn")) {
+    const productId = Number(e.target.dataset.id);
+    const selectedProduct = products.find(p => p.id === productId);
+    addToCart(selectedProduct);
+  }
+});
+
 function addToCart(product) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || []; // Load current cart or start a new one
-    cart.push(product); // Add the selected product
-    localStorage.setItem("cart", JSON.stringify(cart)); // Save updated cart to localStorage
-    alert(`${product.title} added to cart!`); // Show confirmation
-    updateCartCount(); // Update the cart count in the navbar
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(`${product.title} added to cart!`);
+  updateCartCount();
+}
+
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.length;
+  const countSpan = document.getElementById("cartCount");
+  if (countSpan) {
+    countSpan.textContent = count;
   }
-  
-  //  Updates the cart item count in the navbar (Cart (3))
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || []; // Load cart
-    const count = cart.length; // Count items
-    const countSpan = document.getElementById("cartCount"); // Find the <span> where the count goes
-    if (countSpan) {
-      countSpan.textContent = count; // Update it
-    }
-  }
+}
